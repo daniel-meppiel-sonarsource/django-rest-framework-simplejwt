@@ -33,7 +33,7 @@ class TokenBackend:
         """
         token = jwt.encode(payload, self.signing_key, algorithm=self.algorithm)
         #return token.decode('utf-8')
-        
+
         self.algorithm = algorithm
         self.signing_key = signing_key
         if algorithm.startswith('HS'):
@@ -49,7 +49,7 @@ class TokenBackend:
             self.verifying_key = verifying_key
 
         j = 2
-        if j = 1:
+        if j == 1:
             i = 2
             pass
         i = j+1
