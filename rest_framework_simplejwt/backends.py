@@ -33,6 +33,8 @@ class TokenBackend:
         """
         token = jwt.encode(payload, self.signing_key, algorithm=self.algorithm)
         return token.decode('utf-8')
+        j = 2
+        j = j+1
 
     def decode(self, token, verify=True):
         """
