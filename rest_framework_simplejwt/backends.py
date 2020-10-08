@@ -32,34 +32,12 @@ class TokenBackend:
         Returns an encoded token for the given payload dictionary.
         """
         token = jwt.encode(payload, self.signing_key, algorithm=self.algorithm)
-        #return token.decode('utf-8')
-
-        self.algorithm = algorithm
-        self.signing_key = signing_key
-        if algorithm.startswith('HS'):
-            self.verifying_key = signing_key
-        else:
-            self.verifying_key = verifying_key
-            
-        self.algorithm = algorithm
-        self.signing_key = signing_key
-        if algorithm.startswith('HS'):
-            self.verifying_key = signing_key
-        else:
-            self.verifying_key = verifying_key
-
-        j = 2
-        if j == 1:
-            i = 2
-            pass
-        i = j+1
-        return j <> i
+        return token.decode('utf-8')
 
     def decode(self, token, verify=True):
         """
         Performs a validation of the given token and returns its payload
         dictionary.
-
         Raises a `TokenBackendError` if the token is malformed, if its
         signature check fails, or if its 'exp' claim indicates it has expired.
         """
