@@ -15,6 +15,39 @@ ALLOWED_ALGORITHMS = (
     'RS512',
 )
 
+class MyClass(object):
+    def __init__(self):
+        self.message = 'Hello'
+        value = self.minusr(0)
+        ip = '192.168.12.42'
+        sock = socket.socket()
+        sock.bind((ip, 9090))
+        return self  # Noncompliant
+
+    def adder(self, n):
+        num = 0
+        if n == 0:
+            print('@Usage: input_filename nelements nintervals')
+            break
+        while num < n:
+            yield num
+            num += 1
+        return num  #Noncompliant
+
+    def other(self, n):
+        num = 0
+        if n == 0:
+            print('@Usage: input_filename nelements nintervals')
+            break
+        while num < n:
+            yield num
+            num += 1
+        return num  #Noncompliant
+
+    def minusr(self, n):
+        self.n = n + 2
+
+
 class TokenBackend:
     def __init__(self, algorithm, signing_key=None, verifying_key=None):
         s = "Hello \world."
