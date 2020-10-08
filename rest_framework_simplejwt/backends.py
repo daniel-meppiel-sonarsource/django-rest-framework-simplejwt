@@ -1,4 +1,5 @@
 import jwt
+import socket
 from django.utils.translation import ugettext_lazy as _
 from jwt import InvalidTokenError
 
@@ -14,9 +15,12 @@ ALLOWED_ALGORITHMS = (
     'RS512',
 )
 
-
 class TokenBackend:
     def __init__(self, algorithm, signing_key=None, verifying_key=None):
+        s = "Hello \world."
+        t = "Nice to \ meet you"
+        u = "Let's have \ lunch"
+
         if algorithm not in ALLOWED_ALGORITHMS:
             raise TokenBackendError(format_lazy(_("Unrecognized algorithm type '{}'"), algorithm))
 
