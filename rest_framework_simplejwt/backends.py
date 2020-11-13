@@ -15,6 +15,7 @@ ALLOWED_ALGORITHMS = (
     'RS512',
 )
 
+""" 
 class MyClass(object):
     def __init__(self):
         self.message = 'Hello'
@@ -45,7 +46,8 @@ class MyClass(object):
         return num  #Noncompliant
 
     def minusr(self, n):
-        self.n = n + 2
+        self.n = n + 2 
+"""
 
 
 class TokenBackend:
