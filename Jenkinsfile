@@ -3,9 +3,12 @@ pipeline {
     stages {
         stage("build & SonarQube analysis") {
             agent any
+            environment {
+                SCANNER_HOME = tool 'SQ_Scanner_Latest'
+            }
             steps {
                 withSonarQubeEnv('dmeppiel_sq') {
-                    sh "sonar-scanner"
+                    sh "$SCANNER_HOME/bin/sonar-scanner"
                 }
             }
         }
