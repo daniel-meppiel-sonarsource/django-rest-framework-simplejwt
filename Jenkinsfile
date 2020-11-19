@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage("build & SonarQube analysis") {
             agent any
+            def scannerHome = tool 'SQ_Scanner_Latest';
             steps {
                 withSonarQubeEnv('dmeppiel_sq') {
-                    sh 'sonar-scanner'
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
